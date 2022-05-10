@@ -61,6 +61,7 @@ function userAdd() {
         userName.value = '',
         userSoName.value ='',
         userAge.value = '';
+
     } else {
         //Если не все поля заполнены - вызываем alert окно
         alert("Вы ввели не все значения. Так же убедитесь, что Возраст это число ");
@@ -68,5 +69,24 @@ function userAdd() {
 }
 /**
  * Функция вывода в html данных пользователя
+ * @param anyArray - массив с данными, которые будем отображать;
+ * @param targTable - элемент HTML в котором мы разместим нашу таблицу
  */
+
+function printUserTable(anyArray, targTable) {
+    //Чистим данные таблицы от старой таблицы
+    let oldTable = document.getElementById('tableRemovable');
+    //Если таблица не пустая - чистим её
+    if (oldTable) {
+        targTable.removeChild(oldTable);
+    }
+
+    //Создать элемент таблица
+    let tableRes = document.createElement('table');
+    //Строка индекса
+    let rawIndex = document.createElement('tr');
+    //Строка имени
+    let rawName = document.createElement('tr');
+    //Строка фамилии
+}
 
