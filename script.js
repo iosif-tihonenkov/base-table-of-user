@@ -88,5 +88,38 @@ function printUserTable(anyArray, targTable) {
     //Строка имени
     let rawName = document.createElement('tr');
     //Строка фамилии
+    let rawSoName = document.createElement('tr');
+    //Строка возраста
+    let rawAge = document.createElement('tr');
+    //Ячейка заголовок индекс
+    let indexTable = document.createElement('th');
+    //Ячейка имя
+    let nameTable = document.createElement('td');
+    //Ячейка фамилия
+    let soNameTable = document.createElement('td');
+    //Ячейка возраст 
+    let ageTable = document.createElement('td');
+    //Добавляем к строкам ячейки
+    rawIndex.appendChild(indexTable);
+    rawName.appendChild(nameTable);
+    rawSoName.appendChild(soNameTable);
+    rawAge.appendChild(ageTable);
+
+    //Цикл который будет отрисовывать массив в таблицу
+    for (let key_elem in anyArray) {
+        let index = document.createElement('th');
+        index.innerText = key_elem;
+        //Ячейки значений имени
+        let nameTable = document.createElement('td');
+        nameTable.innerText = anyArray[key_elem];
+        //Ячейки значений фамилии
+        let soNameTable = document.createElement('td');
+        soNameTable.innerText = anyArray[key_elem];
+        //Ячейки значений возраста
+        let ageTable = document.createElement('td');
+        ageTable.innerText = anyArray[key_elem];
+
+    }
 }
+
 
