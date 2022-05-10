@@ -26,7 +26,7 @@ function userAdd() {
      * в isNotNull запишется пустое значение. Если будет пустое, 
      * то тогда операция добавления не пройдет
      */
-    let isNotNull = userName.value && userSoName.value && Number(userAge).value;
+    let isNotNull = userName.value && userSoName.value && Number(userAge.value);
 
     //Проверяем, что нет ни одного пустого поля инпут
 
@@ -35,7 +35,7 @@ function userAdd() {
         let newUser = new User(
             userName.value,
             userSoName.value,
-            userAge.value
+            userAge.value,
         );
         /**
          * Будем использовать id объекта из массива для 
@@ -46,14 +46,14 @@ function userAdd() {
         userArray.push(newUser);
 
         //Создаем дочерний элемент селектора -- строка выпадающего списка
-        let opt =document.createElement("option");
+        let opt = document.createElement("option");
         /**
          * value позволит в дальнейшем идентифицировать выбранный элемент селектора
          * в данном случае будет соответствовать индексу в массиве
          */
         opt.value = String(id);
         //Текст - то, что увидит пользователь в выпадающем списке
-        opt.text = newUser.userName;
+        opt.text = newUser.uName;
         //Теперь к элементу документа мы добавили новый дочерний элемент
         selectUser.appendChild(opt);
 
@@ -67,5 +67,6 @@ function userAdd() {
     }
 }
 /**
- * Функция вывода в html данны
+ * Функция вывода в html данных пользователя
  */
+
