@@ -118,8 +118,23 @@ function printUserTable(anyArray, targTable) {
         //Ячейки значений возраста
         let ageTable = document.createElement('td');
         ageTable.innerText = anyArray[key_elem];
+        //Добавляем к строкам новые ячейки
+        rawIndex.appendChild(indexTable);
+        rawName.appendChild(nameTable);
+        rawSoName.appendChild(soNameTable);
+        rawAge.appendChild(ageTable);
 
     }
+    //Добавляем в таблицу строки со значениями
+    tableRes.appendChild(rawIndex);
+    tableRes.appendChild(rawName);
+    tableRes.appendChild(rawSoName);
+    tableRes.appendChild(rawAge);
+    //Добавляем id таблицы
+    tableRes.id = 'tableRemovable';
+    targTable.appendChild(tableRes)
 }
+
+printUserTable(userArray, massOnBoard);
 
 
